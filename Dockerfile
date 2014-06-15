@@ -1,8 +1,9 @@
 FROM ubuntu:14.04
-MAINTAINER sameer@damagehead.com
+MAINTAINER Frank Lemanschik <frank@github.dspeed.eu>
 
 ENV DEBIAN_FRONTEND noninteractive
 
+# The Tag At the end of the Command tells Docker to don't use cache :D
 RUN apt-get update && \
 		dpkg-divert --local --rename --add /sbin/initctl && \
 		ln -sf /bin/true /sbin/initctl && \
